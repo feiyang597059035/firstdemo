@@ -55,7 +55,9 @@ public class NettyClient {
             channel.closeFuture().sync();
 
         } catch (Exception e) {
+            System.out.print(e.getMessage());
             e.printStackTrace();
+
         } finally {
             group.shutdownGracefully();
         }

@@ -1,15 +1,13 @@
 package com.cn.firstdemo.netty.server;
 
-import java.net.InetSocketAddress;
-import java.util.Map;
-
+import com.alibaba.fastjson.JSON;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.SimpleChannelInboundHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.alibaba.fastjson.JSON;
-
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.SimpleChannelInboundHandler;
+import java.net.InetSocketAddress;
+import java.util.Map;
 
 /**
  * 服务端处理器 . <br>
@@ -39,7 +37,7 @@ public class NettyServerHandler extends SimpleChannelInboundHandler<String> {
         } catch (Exception e) {
             String errorCode = "-1\n";
             ctx.writeAndFlush(errorCode);
-            log.error("报文解析失败: " + e.getMessage());
+            log.error("报文解析失败: " + e.getMessage()+"dsdsd");
         }
     }
 
